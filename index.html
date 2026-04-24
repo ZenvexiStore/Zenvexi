@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile Hub - @conectado</title>
@@ -41,7 +41,7 @@ body {
 
 /* PERFIL */
 .profile {
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -398,7 +398,41 @@ body {
   font-size: 14px;
 }
 
+/* ICONOS REDES PRO */
+/* ICONOS REDONDOS PRO */
+.socials-icons {
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
 
+.socials-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 🔥 esto los hace circulares */
+  background: rgba(255,255,255,0.08);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.socials-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.socials-icons a:hover {
+  transform: translateY(-4px) scale(1.08);
+  background: rgba(255,255,255,0.15);
+}
+
+.socials-icons a:active {
+  transform: scale(0.9);
+}
 </style>
 </head>
 
@@ -412,7 +446,23 @@ body {
   <h1>ZENVEXI</h1>
   <p>Tecnología, Gaming y Gadgets seleccionados con estilo profesional</p>
 </div>
+<!-- REDES -->
+<!-- REDES SOLO ICONOS -->
+<div class="socials-icons">
 
+  <a href="https://wa.me/51989583084" target="_blank">
+    <img src="whapsap png.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61574505757837" target="_blank">
+    <img src="facebook-fotor-bg-remover-2026042319248.png" alt="Facebook">
+  </a>
+
+  <a href="https://instagram.com/TU_USUARIO" target="_blank">
+    <img src="instagran-fotor-bg-remover-2026042319545.png" alt="Instagram">
+  </a>
+
+</div>
   <!-- LINKS -->
 <div class="links">
 
@@ -485,7 +535,6 @@ PROGRAMAS DE DISEÑO ADOBE
   </div>
 
 </a>
-
 
 <a href="https://drive.google.com/drive/folders/1bmYrnwEcPdUdOJMxBpxLvSV7xidIThmF?usp=sharing" target="_blank"
    class="product-tile hot">
