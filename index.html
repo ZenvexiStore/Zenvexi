@@ -21,40 +21,68 @@ html {
 }
 
 /* FONDO GENERAL */
+/* FONDO PROFESIONAL PREMIUM */
 body {
-  background-color: #0a0c10;
-  background-image: radial-gradient(circle at top, #161b22 0%, #0a0c10 100%);
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
-  padding: 20px;
-  color: #ffffff;
+  padding: 24px;
+  color: #111827;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(14,165,233,0.16), transparent 35%),
+    linear-gradient(135deg, #eef4ff 0%, #dbeafe 100%);
 }
 
-/* CONTENEDOR */
+/* CUADRO CENTRAL PREMIUM */
+/* CUADRO CENTRAL PREMIUM */
 .mobile-hub {
   width: 100%;
-  max-width: 380px;
+  max-width: 650px; /* MÁS ANCHO */
+
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.55);
+
+  border-radius: 34px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 25px 60px rgba(37,99,235,0.15),
+    0 10px 30px rgba(0,0,0,0.08);
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+/* AJUSTE MOVIL */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .mobile-hub {
+    max-width: 100%;
+    border-radius: 26px;
+    padding: 18px;
+  }
+}
 
 /* PERFIL */
+/* PERFIL */
 .profile {
-  margin-bottom: 12px;
+  width: 100%;
   text-align: center;
+  margin-bottom: 2px;
 }
 
-.profile img {
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  border: 2px solid #30363d;
-  margin-bottom: 16px;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  background: radial-gradient(circle, rgba(0,224,255,0.15), transparent 60%);
-}
+
 
 .profile h1 {
   font-size: 28px;
@@ -156,7 +184,7 @@ body {
 /* LEGAL */
 .legal {
   font-size: 11px;
-  color: #484f58;
+  color: #6b7280;
   margin-top: 36px;
   text-align: center;
   line-height: 1.5;
@@ -400,28 +428,40 @@ body {
 
 /* ICONOS REDES PRO */
 /* ICONOS REDONDOS PRO */
+/* REDES COMPACTAS */
 .socials-icons {
-  margin-top: -10px;
+  margin-top: -4px;
+
+  margin-bottom: 24px;
+
   display: flex;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+
+  gap: 10px;
 }
 
 .socials-icons a {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* 🔥 esto los hace circulares */
-  background: rgba(255,255,255,0.08);
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+  background: white;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.12);
+
+  transition: .2s ease;
 }
 
 .socials-icons img {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 
@@ -433,6 +473,185 @@ body {
 .socials-icons a:active {
   transform: scale(0.9);
 }
+/* GRID PROFESIONAL */
+/* GRID RESPONSIVE */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* TARJETA */
+.grid-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 10px;
+
+  background: #111827;
+
+  transition: all .22s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.grid-card:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.grid-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain; /* <- CAMBIAR ESTO */
+
+  padding: 10px; /* opcional */
+  background: #fff;
+}
+
+.grid-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.82),
+    rgba(0,0,0,.15)
+  );
+}
+
+.grid-card span {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* TITULO CATEGORIA */
+.section-title {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  color: #111827;
+}
+/* BOTON WHATSAPP PRO */
+.whatsapp-btn {
+  width: 100%;
+  background: linear-gradient(135deg,#25D366,#1ebe5d);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: all .22s ease;
+  margin-bottom: 18px;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+.whatsapp-btn:active {
+  transform: scale(.97);
+}
+
+/* LOGO */
+.whatsapp-btn img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+/* TEXTO */
+.whatsapp-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.whatsapp-text strong {
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.whatsapp-text span {
+  color: rgba(255,255,255,.88);
+  font-size: 13px;
+  margin-top: 4px;
+}
+/* DESCRIPCION LIMPIA */
+.profile-description {
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.6;
+
+  color: #6b7280;
+
+  margin-top: 0;
+  margin-bottom: 14px;
+
+  text-align: center;
+}
+/* NOMBRE PREMIUM */
+.profile h1 {
+  font-size: 32px;
+  font-weight: 900;
+
+  margin-bottom: 8px;
+
+  letter-spacing: -1px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #0ea5e9
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* LOGO PERFIL */
+.profile img {
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin-bottom: 10px;
+
+  border: 5px solid rgba(255,255,255,0.92);
+
+  box-shadow:
+    0 12px 35px rgba(37,99,235,0.20),
+    0 8px 20px rgba(0,0,0,0.10);
+
+  background: white;
+}
 </style>
 </head>
 
@@ -443,16 +662,15 @@ body {
   <!-- PERFIL -->
  <div class="profile">
   <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/777.png?v=1769138954" alt="ZENVEXI">
-  <h1>ZENVEXI</h1>
-  <p>Tecnología, Gaming y Gadgets seleccionados con estilo profesional</p>
+  <h1>ZENVEXI.STORE</h1>
+
+<p class="profile-description">
+Asistencia Tecnica Especializada. Instalacion y Soporte Remoto de Software
+</p>
 </div>
 <!-- REDES -->
 <!-- REDES SOLO ICONOS -->
 <div class="socials-icons">
-
-  <a href="https://wa.me/51912210358" target="_blank">
-    <img src="whapsap png.png" alt="WhatsApp">
-  </a>
 
   <a href="https://www.facebook.com/profile.php?id=61574505757837" target="_blank">
     <img src="facebook-fotor-bg-remover-2026042319248.png" alt="Facebook">
@@ -468,270 +686,290 @@ body {
 
   <!-- CATEGORIA 1 -->  
 
-  <div class="carousel-wrapper">
+  <!-- CONTACTO WHATSAPP -->
 
-  <button class="carousel-btn left">‹</button>
-  <details class="category" open>
-<summary class="link-card primary">
-  <i data-lucide="gamepad-2"></i>
-  ¡Conviértete en Diseñador Pro hoy mismo y paga poco a poco en cuotas!
-</summary>
+<!-- BOTON WHATSAPP -->
 
+<a href="https://wa.me/51912210358?text=Hola%20quiero%20información"
+   target="_blank"
+   class="whatsapp-btn">
 
+  <img src="whapsap png.png" alt="WhatsApp">
 
-<div class="products single">
-  <a href="https://go.hotmart.com/C105486943R" target="_blank"
-     class="product-tile hot">
-    
-  <div class="product-tile-img slider">
-  <img src="Gemini_Generated_Image_2in0fq2in0fq2in0.png" class="active">
+  <div class="whatsapp-text">
+    <strong>Contáctanos por WhatsApp</strong>
+    <span>Atención rápida y soporte personalizado</span>
+  </div>
 
-</div>
-
-
-    <div class="product-tile-info">
-      <span></span>
-    </div>
-
-  </a>
-
-
-
-
-
-
-
-
-
-    </div>
-  </details>
-    <button class="carousel-btn right">›</button>
-
-</div>
+</a>
 
   <!-- CATEGORIA 2 -->
-   <div class="carousel-wrapper">
+ <!-- PROGRAMAS ADOBE -->
 
-  <button class="carousel-btn left">‹</button>
-  <details class="category" open>
-<summary class="link-card primary">
-  <i data-lucide="keyboard"></i>
-PROGRAMAS DE DISEÑO ADOBE
-</summary>
+<!-- PROGRAMAS ADOBE -->
 
+<div class="category">
 
-
-
-    <div class="products">
-<a href="https://drive.google.com/drive/folders/1I0z6man2ecm8_A7VnhlEd177hMAEXxZv?usp=sharing" target="_blank"
-   class="product-tile hot">
-
-  <div class="product-tile-img slider">
-    <img src="Photoshop-sur-le-web-e1668611899469.jpg">
+  <div class="section-title">
+    Programas de Diseño Adobe
   </div>
 
-  <div class="product-tile-info">
-    <span>Photoshop 2025</span>
+  <div class="products-grid">
+
+    <a href="https://drive.google.com/" target="_blank" class="grid-card">
+      <img src="data:image/png;base64,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">
+      <span>Photoshop 2025</span>
+    </a>
+
+    <a href="https://drive.google.com/" target="_blank" class="grid-card">
+      <img src="data:image/jpeg;base64,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">
+      <span>Illustrator 2025</span>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1e3u2dGCXkC0AApYkl1F4lgeCgjPmfRCY/view?usp=sharing" target="_blank" class="grid-card">
+      <img src="https://pctek.ir/image/cache/catalog/Gallery/Blog/premier%20pro/premier%20pro%202023%20System%20requirments-500x350h.jpg">
+      <span>Premiere Pro</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/960px-Adobe_After_Effects_CC_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail">
+      <span>After Effects</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkrJJSwJiTHHahmCmiciYynBkr8hm-_xbnPQ&s">
+      <span>Lightroom</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="data:image/png;base64,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">
+      <span>InDesign</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA7VBMVEUHJgA1+wAy/wA3+QAFJwAIJQAIJwEz/AA+/AgwrwwJRAY/2BsAHAAAHgAAGgAEHgAAIgAwwgwNIwAAFgIAGAA74Qs86wo9uB4AJAAPUAIAIAAWYgQJIgM5sB0wgB9B9RQldxMAEQAADwAENAAAKgAALgA1vhIAAAAAPQAAOAAzqRAAMQAACAAunA8TagQlngkQWQAQcAAqhRYYSRMpdRoojw0rygwdhw47mRolWxZL6iAvtg8jgAlG1iYkjhA5whEPSgAbWw012wo/syUoaRkZSQop2AA6kSRGriwvjwpLziAftAMNAA0cXxQAUABaACIvAAARVklEQVR4nO2diV+jSBbHOaqglIQgEERSdpk0xkTNYc94dLRHO7Ozu+Pu9v//52xdHEmIbfcCcVx+8+lMAhXgm7req/dABUop71YN4V9f75uO6d0DNoTvQO+fsFGjRo0aNWrUqFGjRo0aNWrUqFGjRo0aNfo/ElCUlZX/XYcBoAIBKPWIAEA7EmpztXakdouf3m6FsFxCBfQ+fXhD+vTpl7BcQtgekrelX6NSCaFrHyBdSFX1NyB00iqXEPop4dsQOrHLBKR16B0gNS9T3al0vRpC1kRNoV0D0josdcYShKaqB9bO1aW/c0WEponQcDTa361GvUA1ddZKyyfUNB3t+aHjRE4UYT77O9IKcPgbnH8TJbt+usjGHv7GPuqiagmZBWeIjdyYExYcyG/YfPO6IuA1RdqVEqpoz5bWksgUK5dwS5HVEzFCrQJCNh9mhKAawi11CDfqsAJCJSX0KRmgUnaUZWR0UsJyDwztA1PUoSQs2Xd5tTLCVrkHpoTqSh3umrASu/StEZZ63CLC3SAyQlW00pK9p7dHWLZ/6OUIlR23UkHYNso8bo7QEYRlHv1HlBF2qiKE757Q2W1CcY6w1OOuEZb66/2Ymjr8Wb1JworqkPoWb6KVlm7TZITwDRCalRKGb6OVVlyHO1RlhJmP/04JVz1guCsHX8kTVunjv0/CvPcEc8tQdasqQlhIKN/wf3zxzYHp3qpquS5Cha3rgXY7isIwBHF8mim2fRszVlwJY2U2zQYhBYxG15O9vfvhcHhww2RZFn092Ludjr2B7QBQhWFQj+UtXUS7tyAyIpyGhRHSdUIC6+5z7FVSifV4wHIdw+4FiA6wVKappoSqyT6T4OZ634/YRZQ7INXn4wtCneOYqgiequyfjJ+aiFi3cR+XvTpeDyHICFURDeYtVU0DxKZJ262KguFRC7q4KsISj/oSoVZMyD9oaHEbd8q9ktrr0NxSh/yDqptkdoFZrKq0aqy+Du20G6aEogvqSXpGlsXAuIPjdscA2C3rB6+BUIEArhNSOoR4vg0bXJGsUMFL7nxICYFBVcKV1OABFxCqdNw8OLjnuukGgZ6l3piaSR6o2QNKJazWAw5hKIKxCSGruoPR5WDQ73t9L97vXR8EekaoaUGv9RcgzEe5Q2WjDocXNt0cAgPA0LYvevck6ZZ0t3YTY/jWCXPek5OMpXFuLB2OWS4kReBeRdQ6+2xpmhxxdJVM7AoIq/KAM0Jp0zAO83EcKpJQyH8aZqONbh1FfwXC9Sg38LM6fBwDUYeKdBg7zoi11GTWuG6VFZCrwT90vkvIfgMFOPs3ycSoq19OI1qFK4i5CjWM1Rzy9FPBT5LNFnUTruYks27ami7krEFNm1ufH6bd95joqNvJUVFC2+sPhBzgZoQxxHx7v99vCcc7F+Uu2Wp7gVDfIORpU3DwG53/BaH5COjlufbRZDaZzSaTyd2RkyeM5ndsK9MUZH4lCFvzO7n9V58T1eMBC0DDT+fDjTrk3/FHS00Qqmr3iF6Q2/8kEo2RTmaXWUnD6J8TldtCSB/mPGfY8e8JYlLRZFAXIfcP2VXlCYfjjXsD6GgTzliOHSPUyMPAgLD1RIgwXfWDy6wOoWHf6HJ20btOmGwHsTO26Bk0E2lk2lprpVUTrvZDSrjxFQg6864mTFRNPR7QL7ZPl0gMsGYXRMlgA6Ez5qMHPxTZT+sQgPDrgnnYSEfL/bBOQmV9pBl+LHBzjU74zHspq4abCwydsP2IxPRhBnOftQM2wkLc/kp4zdJq1MnUT44FsfdB56skqn4Ti631eMCKkqzTyBmfEhYtO+FoosvUcK175NFatSdEEKrkdgAloYFbn4i0YSnh9SAldC/PkcY2Uz+z5dRICFcsb3ptqJgQ+lOSEJKrS2rWRFdBYsvtedBQDN4YoHcsVngoiq4f+umxDN8SbrW6OPHExtrW2lYJi+sQuq3RMk3vvztjWalP3YTQio2EMPQtXdahqZvLuJMcqz0KuPtpqtbI3yAsE3DVP4Sr3hPraYX9ELq2P0yW37TjPiOMb+SChxk8KXxEppNIBxAzIVS1YN6Sxq17eUU07mCrBwO8SlipB7xeh1sJYefy95Tw3uMW+TkRK8hmcGVLpxF3vqGUkLbnhyi13691TawgTAZubYQbrZTPh4WEwLi8S6xv89Hv0DLeByIrkbpUgpCabLfsbpWEEJ2HCSG41/kPqAZ/i8AbJFRO48E/EkLtEbdp67Y/L0SzU/V/OSDmhFF8KIZcjY2bqnnwERv8HM7IEoSm9UtcNeFKlLtopClaLozjAZsG+ECjfQFtepFtYJnC/Uc3cRgbkP7HQORyHT2eai6fPGYvKDBkN48wQvTogA3CSmPAOUIt8fHDoq/1T4gE1KzTiHXhs3uKwaxV1P0j4hFIw+kF3A7o/l30UDL1Qsdhwa1rXaxVkpmNlZ0SmlsIDUqoiyViRkj7l3E5IYJQJX+zWUwDGtED4cbdwR4So9CtB0IHGMDf43eT6WrwkN56UFeU+1WEtMjghPDQhiBkVeZdLcSasYn+4XGH2Y1nSGNLVrNr0WnReRuCUDGgQ1s0r8Tlt06SAlKDB/zjhCon/BJzwvaThUSlmsctHijHH/mhVf3qik+LtNfFmO2wPwaazmejm1MHwGpb6U8Qcmtl8CBMajqWPgOH1ZhzcU80oe4pZCCd/SXrAPriaX8hYh7WR5/uwF6PMBudIk76UA409Ua5s9jTC4T6GiEMJ4THHOnUfhSxWcHrBYxX/xLFz3xYUoPPPm2irnfH+iX7PPXTpZyao9y52aKQMOzfZvNhy+HbW1eBIDTJCTfP6IzCJ/rDweBYDEtkalMiHPFpkn629qOaCZWc95R6wOsTIq9DatPIKI02tAWhd9QVM4ypT9qYTnODf7Ija+i6f/kn4uzojprZAI+/SI/jPoR1Eq5FuV+wS10F9g+TuKJ2LN2+zumBxicFzRxe4Di2adtkxgw56fRPxCBkPjrYUJyvC523UnTNB5XavCdnI0K6jRC7OH5OLe/JmePyQ3kzbmdTLOuoHcf+UZf78d059ueBaL/WiNpt4IEIQjJlFu0mYZmAP0foQvupKwk1/dMl5O6B612JCR6hBQtK2VM+XplfxmF73xJDzaIXAfd0hrjVrXZH/OBvkBBCZrRJwmAuCCHujIgmvkYe6MH8iW4y3j0AHDDkIwu1YUI6TQ41bnWjx0gcbp2wula6HuXethIF3f5MeE7UbViOWi4vg3HbkuvE+gS4GNzzBVXyZz8O/ZnotWQS49ZIFKOz4QAWEpYJuH4fcAFh4UrU+AbJpy9owzAWQxSdAA+5G0Fr5z7G+Mlih0DduR8C+zdR53RHx5uLMdcMphuE1Ua5YQFh8UoU8K8CJFIydDLpcw+Pfhe27vj6FG2qN2Ns97o8v+jLCFPCaZc7iurNyO5PA16H1JkS9lltHrC8l/sVhCHYE+u/uokW0w6IAXPeAfSnAatE2suCI9u75XYd2gtxqHSOlnwiMbu9/uAaicY8dGB6t3RNUe7CVrreD+kwQK9FE56tRkdK22CLFvRrrv/UZVvpLE+uvGjG7Rh07VNru/PxkacCmvrDmXcugx7XlyCunpB5TxsR0vxYuhG3MKhLeU6EA0u/eO5jw1AAX3jCp8+6WCSkg0g45LM86fUNgHHIVoypA6n/+e/4QBAGPa+YsPp7ufOEB2uxJ2pkub6YsfkCDL1MZmSzKoSuMjgmLPONQh5ejiw+xy/36dSIof0Q0KmTEh6fPYnAFbLGOC5spTVGuYvqELj2H5ZmipRMk/YlzBcsKDkEceuBmKKCvjjzBZ8Bh6e0kWLHn3fZCGTqz2dTysrTPCI3fQBBhYSFdzoXEOYif09DkmSd0v4mlkDZyhqOT+1vXUnYfXpgD4Ux0YQOJxjG0dgSK99WfEs4ITXPpW9Yp4+/GeWWIw10XZalxxzDI5aowJPdKOLjBUzSw+neGF8cyBUsMuVGqomov0Q5gBMdmjzUROYz5l3r1DfsKBuEldg03yN0BCHGrovd6PKrpatpztCiZ7s4IeRB7RnSxDxy+8zXW8mIx/UNpT1BfB3fvL7XeLDNempJuDojM3y2UIwVQmpz0iboUr6OF3+dBLIZ0mvVyKQF8QohHYRMToj2lty+sWLICCF0rhBv2ua/LL68ox+eRsk11Ego+twK4ann21T9geeMpzOLmImXq2vocdzB7OqzjCG/t5AhqIDwKtyTq4XQmQd8AREFAWujpn4dJX273jpk2/Kt1LrqUc3nvZPf9m4CtgqM0qzTxdzG3EfPCDtPFpLZtrzCyAcZHYR4tBRp4yKVms6T6YBSK6GyPpaq7B4EEgQEyRQavkbKR5lgeikyvXMJQ53Te5SmE7MEzV8SAwXSiT5JNGJDkHW6nbBMwBei3KaM1KtIT1KhJaEItXRvecxplRDTAcUUoSYe+F3206Zoz8w03V/V0XEb74JwI37IaiwhS8XiE/ryyqG+vkDMCGH7ioigtiAcnmWEH8T6Gm+qhHzysil214SstaVwHJW6FM9Hl64LwHorpfZAgBJCOrFf/9tNdoVzIvx8PtQG/7G3E1Z1L/dmDFh48TlCVQwzqHs97rhFgUWIL4a5x/cFvZQDduyunvXQ5RhvIaw1yr1KyDsk3YCC+17otLJpMCeDecGyv7FZfT8bTvDZY24Quo9h/YRZK81mi/VWSt8GhyfjkLv1RYTA+5WkRfVhHGVnOrsj6XClX+fs+Rp9fDlsMEKUw+JBeL6KFiyfb4+AF3HTp0gAtP4I5G/DsoFsI9vT/zVICGnzDeOs81ZLuJJfKqeL6KvV7XYXi0CIzYdBd2kNJw/fQL+Fhf1amPwMQAdbSWPUgqmdcoDQ/2WR7EHWRSeJbtfnAecIwem3OTVjqKZXUtP50zge9Nuys0KRElRAiJ2rc6HZ+d24kxYBCo4/nSf6BLCypQ6re15b8uQPbtU4yfMbO1Q4andg1Gq1Q75m+DIhgF4/kU/N0fQ8LG44kDsGHszyhevzgPOE/Ir4MwbZrM4z9V2Xr1WIAWYboYIxwCJvj7vFSo4QQ3lzBjAyp3KNsHIPWEkQeRcD7N40tjoh71AzXkPYYkkKLv09uL+F0zIAuEoIxXbqK+dT3Ouuw40SP3jALe/Xn/2+UayGKPc2wsKpvdRr4K+7e4rSOyJ8AeQdEW6zVSpVnYRyra3ME7zmGvhrXfdyKzuoxnrr8AXCyjpjbTFg3g2VHTydZp2w2judd/GMoTqj3Lt5ilKNHnBY/exeeA38tYYoN7u5cNettJYod7mHf9Ul8Ndao9zlnuH7l8Bfq8zz3ohyl3uG718Cf601yl3qGV5xDfy11ih3qWd4xTXw11qj3GWe4DXXwF/rjHLXrVp9/DcwWzSEP3z0V61iVKvaPOCdPbG8VsKdaNeridWrNh//LTyxvPrnee+asPo873dJmOV5h++TcP1JyYoin/hQu9qVR7kh74dyYJPiJdJPbANc2yBr/X8uAmFF3tMKoQNxIleEOFc+FW14RRH8yiLeUVc3y4/jy1aqo72BQxU6UiHX6qeiDa8o4ryuSOiLOqyGkB54eXy4Yx0/BpXVoSlvLuBP6xKZdS/9jeDtReS9Qmhtg4rWv7xRRG5QK1rFUDPCNGtpO+D2Ipt7NrZ8pwh7qervAedSZJMUya3aXmRzz8aW4iIZZyUzviqf2v2/E6rfJ/xOkfLXvBkhkk+/K5K6vnejmKquv9n48vYNG1t0UjYhaP12/Kb0++d2uYAA0ukoStVeUfKnidvJnyZuJ3+rOFdk+x755XzZ7xVpt6LQKXwizs8TGjwPy3XZrIs35DjQEf+XezeLvbhnS9kXirjlr4a5rrS54duQsYv1vkaNGjVq1KhRo0aNGjVq1KhRo0aNGjVq1KhRo0aNGjVq1KhRo0aNGv0F9F+24lbRJD+A+gAAAABJRU5ErkJggg==">
+      <span>Dreamweaver</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="https://pbs.twimg.com/profile_images/1272875599569096706/gIr0v8xi_400x400.png">
+      <span>Animate</span>
+    </a>
+
+    <a href="https://wa.me/51912210358?text=Hola%20quiero%20información" target="_blank" class="grid-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQDLBp3F-4MYNGkCK2AWC-VZ1wfAJOS2jpMg&s">
+      <span>Adobe XD</span>
+    </a>
+
   </div>
-
-</a>
-
-<a href="https://drive.google.com/drive/folders/1bmYrnwEcPdUdOJMxBpxLvSV7xidIThmF?usp=sharing" target="_blank"
-   class="product-tile hot">
-
-  <div class="product-tile-img slider">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdFdBFAmsMp7Jzv31gR1eumOWm9k-t6V90lg&s">
-  </div>
-
-  <div class="product-tile-info">
-    <span>Illustrator 2025</span>
-  </div>
-
-</a>
-
-    </div>
-  </details>
-  <button class="carousel-btn right">›</button>
 
 </div>
+
   <!-- CATEGORIA 3 - AURICULARES -->
-   <div class="carousel-wrapper">
+   <!-- AURICULARES PRO -->
 
-  <button class="carousel-btn left">‹</button>
+<div class="category">
 
-<details class="category" open>
-<summary class="link-card primary">
-  <i data-lucide="headphones"></i>
-  Auriculares Pro: Sonido Inmersivo y Poder Gaming
-</summary>
-
-
-
-
-  <div class="products">
-
-    <!-- Producto principal -->
-    <a href="https://s.click.aliexpress.com/e/_c2v3T41H" target="_blank"
-       class="product-tile hot">
-
-     <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sf109294d7bde40aea662169ada5e5c0e6.avif?v=1769316695">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sd6426cf7f91f4696b408fc9526a6e757c.avif?v=1769316581">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/puee_cher.avif?v=1769316534">
+  <div class="section-title">
+    Hardware para Repotenciar tu PC
   </div>
 
-      <div class="product-tile-info">
-        <span>Kiwi Ears Quartet 2DD + 2BA</span>
-      </div>
+  <div class="products-grid">
+
+    <!-- 1 -->
+    <a href="https://amzn.to/4wpUV7q"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/51HqC0rU9HL._AC_SX679_.jpg">
+
+      <span>AMD Ryzen 7 7800</span>
 
     </a>
 
-    <!-- Aquí irán más audífonos -->
-    <a href="https://s.click.aliexpress.com/e/_c4NXRxeT" target="_blank"
-       class="product-tile">
+    <!-- 2 -->
+    <a href="https://amzn.to/4dh02hB"
+       target="_blank"
+       class="grid-card">
 
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S1aab53f7cb4d4accab8988e76f64bf2ec_jpg_220x220q75_jpg.avif?v=1769316968">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S35505b0ac82347ac8ca4b182f207e29d8.avif?v=1769316969">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Scabf094438ed43e38a08ce09e516327c8.avif?v=1769316969">
-  </div>
+      <img src="https://m.media-amazon.com/images/I/81MH+nx+shL._AC_SX466_.jpg">
 
-      <div class="product-tile-info">
-        <span>Kiwi Ears Aventus Bluetooth</span>
-      </div>
-
-    </a>
-        <a href="https://s.click.aliexpress.com/e/_c3NAoxhp" target="_blank"
-       class="product-tile">
-
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S517249b8ea9a427d93ddde8ea5146a11u_jpg_220x220q75_jpg.avif?v=1769317470">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S2450037bd8be48efa5bef3a5c6ed2f4ca_jpg_220x220q75_jpg.avif?v=1769317471">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S9d4758d0def84934baa7487f1777a3a00_jpg_220x220q75_jpg.avif?v=1769317471">
-  </div>
-
-      <div class="product-tile-info">
-        <span>HAYLOU S30 Auriculares</span>
-      </div>
+      <span>ASUS ROG</span>
 
     </a>
 
-        </a>
-        <a href="https://s.click.aliexpress.com/e/_c4pyeKAP" target="_blank"
-       class="product-tile">
+    <!-- 3 -->
+    <a href="https://amzn.to/4uJOHxL"
+       target="_blank"
+       class="grid-card">
 
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S2c2e950d14e94e7fbb38f86aad8564c5l_jpg_220x220q75_jpg.avif?v=1769317935">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sd598e280e3164df2bbb1a7a0e1c7d23et_jpg_220x220q75_jpg.avif?v=1769317935">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sf82ae5742d5a4e87a57a9f4cac9b7b38f_jpg_220x220q75_jpg.avif?v=1769317935">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S262b34ebd5b04484a670bf621025060eB_jpg_220x220q75_jpg.avif?v=1769317935">
-  </div>
+      <img src="https://m.media-amazon.com/images/I/71xOTU97xEL._AC_SX466_.jpg">
 
-      <div class="product-tile-info">
-        <span>QCY Crossky C30S</span>
-      </div>
+      <span>16GB DDR5</span>
 
     </a>
 
-            </a>
-        <a href="https://s.click.aliexpress.com/e/_c4r0gC7h" target="_blank"
-       class="product-tile">
+    <!-- 4 -->
+    <a href="https://amzn.to/42qkU15"
+       target="_blank"
+       class="grid-card">
 
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sb0e72bd72c894a74b7b5e2e7786a82ced.avif?v=1769318372">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/Sfc6e9ab6caa2413fb49fc3dd6aedbd58M_jpg_220x220q75_jpg.avif?v=1769318371">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/S69ca045861e549868f27ee00fb4b751aT.avif?v=1769318372">
-  </div>
+      <img src="https://m.media-amazon.com/images/I/71z4wLCzcIL._AC_SX300_SY300_QL70_FMwebp_.jpg">
 
-      <div class="product-tile-info">
-        <span>Kiwi Ears Altruva Hi-Fi 50 mm</span>
-      </div>
+      <span>RTX 5070 Ti 16G</span>
 
     </a>
 
+    <!-- 5 -->
+    <a href="https://amzn.to/4wppkTA"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/61uDl4amtnL._AC_SX466_.jpg">
+
+      <span>NVMe de 1TB</span>
+
+    </a>
+
+    <!-- 6 -->
+    <a href="https://amzn.to/4eBu41Y"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/71FAUQmc0sL._AC_SX466_.jpg">
+
+      <span>GIGABYTE 750GM</span>
+
+    </a>
+
+    <!-- 7 -->
+    <a href="https://amzn.to/4noDU9z"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/71OwJlxlb0L._AC_SX466_.jpg">
+
+      <span>Wireless Studio Pro</span>
+
+    </a>
+
+    <!-- 8 -->
+    <a href="https://amzn.to/4uBp3uW"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/61meQuPPc-L._AC_SX466_.jpg">
+
+      <span>Teclado mecánico</span>
+
+    </a>
+
+    <!-- 9 -->
+    <a href="https://amzn.to/4u0rQ0Q"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/51FqInhakoL._AC_SX679_.jpg">
+
+      <span>Barra de luz para monitor</span>
+
+    </a>
 
   </div>
-</details>
-<button class="carousel-btn right">›</button>
 
 </div>
 <!-- CATEGORIA 4 - MOUSE GAMING -->
- <div class="carousel-wrapper">
+ <!-- MOUSE GAMING PRO -->
 
-  <button class="carousel-btn left">‹</button>
-<details class="category" open>
-  <summary class="link-card primary">
-    <i data-lucide="mouse"></i>
-    Mouse Gaming Pro: Precisión, Velocidad y Dominio Total
-  </summary>
+<div class="category">
 
-  <div class="products">
-
-    <!-- Mouse principal -->
-           
-        <a href="https://s.click.aliexpress.com/e/_c3zdPyJ1" target="_blank"
-       class="product-tile">
-
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/11.avif?v=1769318560">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/2.avif?v=1769318560">
+  <div class="section-title">
+  Gaming Pro
   </div>
 
-      <div class="product-tile-info">
-        <span>Logitech G502 HERO</span>
-      </div>
+  <div class="products-grid">
+
+    <!-- 1 -->
+    <a href="https://s.click.aliexpress.com/e/_c3zdPyJ1"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/11.avif?v=1769318560">
+
+      <span>Logitech G502 HERO</span>
 
     </a>
 
-      
-        <a href="https://s.click.aliexpress.com/e/_c2yqvIER" target="_blank"
-       class="product-tile">
+    <!-- 2 -->
+    <a href="https://s.click.aliexpress.com/e/_c2uIaqR5"
+       target="_blank"
+       class="grid-card">
 
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/33.avif?v=1769318731">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/44.avif?v=1769318731">
-  </div>
+      <img src="data:image/jpeg;base64,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">
 
-      <div class="product-tile-info">
-        <span>Attack Shark X11&R1</span>
-      </div>
-
-    </a>
-        <a href="https://s.click.aliexpress.com/e/_c2xaPo99" target="_blank"
-       class="product-tile">
-
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/66.avif?v=1769318928">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/77.avif?v=1769318928">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/44_5652cfa5-ae05-4ca1-9b5c-fdc705b80c41.avif?v=1769318928">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/55_afe8e117-289b-43e7-bcf9-c6e7c1df7b51.avif?v=1769318928">
-  </div>
-
-      <div class="product-tile-info">
-        <span>MCHOSE K7 Series Gaming</span>
-      </div>
+      <span>auriculares inalámbricos</span>
 
     </a>
 
-      <a href="https://s.click.aliexpress.com/e/_c44XangR" target="_blank"
-       class="product-tile">
+    <!-- 3 -->
+    <a href="https://s.click.aliexpress.com/e/_c3xR9vaJ"
+       target="_blank"
+       class="grid-card">
 
-       <div class="product-tile-img slider">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/14.avif?v=1769319310">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/12.avif?v=1769319310">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/15.avif?v=1769319310">
-    <img src="https://cdn.shopify.com/s/files/1/0967/2015/9039/files/13.avif?v=1769319310">
-  </div>
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxETEBUTExIVFhUVFRUYFhgXFRUWFxUWFRgWFxUYFxUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFRAPFSsZFRktKysrKystKystLSsrLS0rLS0tKy0rLTctKysrNy0tLSs3LTcrLSsrLS0rKzcrLSsrLf/AABEIAPoAygMBIgACEQEDEQH/xAAcAAEAAAcBAAAAAAAAAAAAAAAAAgMEBQYHCAH/xABIEAABAwICBwQGBgcECwAAAAABAAIDBBEhMQUGBxJBUWETcYGRIjJCUqGxI2JygsHRFENTkqLh8DPCw/EVFzVjc4OTo7Kz0v/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAaEQEBAQADAQAAAAAAAAAAAAAAARECMUEh/9oADAMBAAIRAxEAPwDeKIiAiIgIiICIiAiIgIiICIiAisGmdcqCmJbLUM3x7DLyPvyLWXt42WJV212If2NJK/q97IvgN5XE1sxFqB21mrPq0sQHV7z8RZT6ba5MD9LRAjiY5cfBpab+aZTW2EWH6F2laOns10hgf7s4DP4wSzzN+iy9rgRcG4OR5qK9REQEREBERAREQEREBERAREQEREBFDJIGgucQABckmwAGZJ4Bar112hufeGjcWsydMMHO6R+6PrZ8rKyalrLdateaWjuy/azfsmEXH23ZM+fRaq1g1zrau4dIY4z+riJa0j6zvWf4m3RWDd+OfXvXjngLUjNoyIDIWUYYqaSrAVNJpJaRdQFMbZY+dKFBpMqDIn0zHjEePEdxUOjdNV+jnXpZjuZ9k704XY8Y7+gb8WFpPNW2k0jkrrA9sgN0yUbR1M2p0tWWxTgU05NgHOvFITgAyQ2sT7rrHGw3lsBcoaUoA1+WDsf8wsz1D2lTUZbDVF01NgA7F0sI6HORg904gZZBqxY3rfiKRQ1kc0bZYntfG8Atc03DgeIKnqKIiICIiAiIgIiICIiApVTUMjY573BrWglxJsABmSpjnAC5NgMyeAWmto+uBnf2UR+iY64GXaEe07pyHjnlZNS3Hmu+uL6omNl2QA4DIyW9p/Icm+fTCJZwFJqK0FW6ecldMxjVXNWKhlqyqaSRSd65sASSbADEknIADM9FNMRyzEqmkk5lbL1R2RVdSBJVE00RxDSLzuB+ocI/vXPNq25q5qHo6isYadpkH62T6SS/MOd6nc2w6LNrUjnPRGqWkakXgo5nA5OLezYe6STdafArKqTY5pVwu79Gj6Pmdcf9Njh8V0QizrTQ/wDqa0i0YTUpPLflHx7Iq36Q1NrqQF0sdmgj02kPjIJF8Ri37wF10QoJomuaWuAc1wIIIuCDgQRxCsqY5t0szfh3uLTj+P4+ase7dbC120IKaoljbfs3s32Y3w5X42IIWvGlaSMr2e64P0fMGOJNLI76RmJ7Mn9awdPaAzHUBdCxvDgHNIIIBBBuCDiCDxC5Ttdbw2OacM1EYHm76Yhg5mF1zF5WczuYFlpnyIigIiICIiAiIgIis2tmnW0lM6Q23z6MY5uPTkMz3IMV2naz7jDTRnHAyHpmGeOZ8Oq0lXVZc4lXDT2kXPcSSS5xJJOZJNzfxViLv65Lp0x29MilvkuvHOVRoLQs9bUsp4G3e/G59VjRbee88Gi/xAGJCWmPdC6IqKydsFOwve7wa1vF73ey0c/AXJAXQWomzqm0eBI601TbGVwwZfNsTT6g6+seJtgLtqZqnBo6nEUQu42MspA35XczyA4NyA8ScgWLWni9RFFEREBERBge1WkvHDLxD3MPc8XH/ifNaKkbZxHUronaPHegcfdfGf4t3+8ueq7CV3etTpn1C0rNdkukey0mxl/RnY+M8rgdownxYR99YQFcdCVXZVMMt7dnNG89zXgn4AqNOoERFAREQEREBERAJWidoesf6TUuLTeKK7I+R95/iR5ALZO0nTv6PSFjDaSe7G8w323eRt3uC0HXy3O6FrjPWaoZ3Em6p3qpmbZUcpWkSwxz3NYxpc5zg1rRiXOcQGgDmSQF0ts01Mbo6ls6xqJbOmeMcfZjafdbfxJJ4rBdhuqG846Rmbg0uZTAjjlJL82j73RbqWLWoIiKKIiICIiAiIgx3aD/ALPl74//AGNXOukv7V/euhto0ltHv6ujH8QP4LnivP0ju9anTN7SmqJ/qkdCoAo2lFdU0Eu/FG/3mNd5gFT1a9VnXoaU86eA+cbVdFlRERAREQERY7r7pf8ARqKRwNnyfRs73A3Pg3ePgEGp9oGnf0irkeDdkf0cfUNJufE3PdZYhBHgXlTqv0nBgUdf6LQ0Lows9S9VGrGg31tZFTMuO0d6bh7EbcZH+Ay6kc1QTOuVu7YZq52VM+sePTqPRj6QsOf3nAnuDVmrI2TQUccMTIo2hrI2taxoyDWiwCqERZaEREBERAREQEREGF7VZ7UjG+9KD4Na78wtB1J9N3eVuXbBVW7FnJr3eZAHyK0w44lbnTPqEKYFLCSGzT3FRXUOq7bUNKOVPCPKNquap6CLdijb7rGjyACqFlRERAREQFqHazpXfqWxA+jA25+2/E+Td3zK2zVTtYxz3eq1pce5ouVzfrJWuke97vWle5x8Tey1xZ5KfREe85zyqLSs93FXaK0VPckC/Em2JWNVTyStIn6C0U+qqoqdmczw2/utze7waHHwXVlHTMijZGwWYxrWtA4NaLAeQWnNg+hd6aarcMIwIY/tvs6Q+DdwfeK3SsVqCIiiiIiAiIgIiICIvCUGldq1bv1r23wjY1vw3j8XFa3csg1rqZH1VQ8WeDK/6pALiQAcncuCxwyAnryOB8ltlEqvRdP2k8Mf7SWJn772t/FUYWUbNaPtdK0zbXDXmQ9BG1zgf3g3zSq6NREWFEREBERBi20iv7Khc0HGVwYO71nfBtvFaIrjvTNb3LZm1/SbRPDEXABjC83NsXmw+DPitWQ1TDOXE4DjY2+S6cemL2m61ND2NiubWubcxg2/x8li9DFI31j6IBJB4WsPBX3Sk+/I5wywAPMAX+Zcp2q2jhU1tPAcpJmB32G+k/zaHBStOgdnGiP0XRkEZFnub2kn25fTIPdcN+6smXgXqwoiIgIiwrXLaBDSXjitJNkcfQYfrEZnoPEhBl1bWRxML5XtY0ZlxAHxWEaX2qUcdxC18x5+o3zIv8FqfTOmKiqfvzSOceHJo5ADADuVuMa3OLNrYNXtbqz/AGcMTO8OcfmFSN2sV4OIhI5GN34OWBSOsqWR6uRPrceiNsAJAqIAPrRu/uO/+lkOsuvVKygdNFIHOf6EbcQ7fIxuOAAxJ/MLnUB5OBsrxoylc6znX3W+rfifyUyKqZGndu7M4nvKtFU0HP8Ay7uSvFY9WWU4qolAuHUfHz4raewqg36meoINo4hG0kWu6R13W6gRj95avat/7HNG9loxryPSnkfIfs+ozwLWB33lmtRnKIiyoiIgIipq+tbEzed4DmeSDTeu0L6jSs+4B6Ia3esAGsY0A7zgMt4u88FiFdLHDdkOLvakPrOPGwyaOg8SVmeumlg0P3AAZXlzyMyTzWtnOubrt45+ogwuxKPpWkWIv3hVEYwVNU1QBtdZrTIdA65aQoyOync+MfqpiZWW5Nud5n3SB0K25qdtGpa0iN/0FQcBG9wLXn/dSYb3cQHYHC2K58bVgqZcFTNNdZoVpnUDaa6Pdp655dHgGTnFzOQlPtN+vmONxci57SdesDS0zsDhI8HP6rSOHM8e7POLqPaBtAtenpXcw+QfJh5dfLmdWhpJucSvG4m5UTpLYLcmM2oyLKTI3mo98BeRMLz/AFZVFO2mc42aFcKfQXvHwCu1DThoVYVFxa2aJYMxgvakgBVs0lgrRXTIq3VkitryqioeqVREQGBXVehqIQU0MIwEUUbB9xob+C5appA0hxyaQ49wNyusQVmtR6iIooiIgkVtU2Jhe82A8yeAHVa00/p90rySbDEAcAAf6xV21/0raUR3wjZvHkXPv8Q1v/cWs56zAX5LpwnrPKrfrNUbzs1Y2HFVGkZruVI0q2oqKmbdjceQWLumJN7rIK4/R+IVnkiBWK0ksmIVfSVStkkZb3Ks0NSdpJibMbi89OAHU/mkKyOiaABI4fYHM8z0HzUdy43OJUD5bnkMgOAAyAUMs26OpyWmUyWa2Az+SlNeqYOJUe9/NVFQHXVxo7BWqIqvp5EVfqdymVNQ1jbvcGjm4gD4rHP9LySHs6ZtzxkPqt7ufj5FVVPq0xx36h7pn9Sd0d3H5DooqVWaxU4yeXfZa4/grTNpiNxzI72kLIqmOCMWHZs6eiD+ax6rqoySLjDxHmMFKJJkDhcEEdFCApT6RhxZ6J5tyPeMikMpDt1+B4Hg4cx+SCtY24sumNTq/t9H00pzdCze+20br/4gVzWwLeexqp3tGbn7KaVn71pf8VZqxnSIiiiIiDR+uukN6oq3X/WSNz/ZNEX+GsLq6nFV+s9XeWoxzkm8y911js8i6S/GUMr7lQNKh3lUyuZALyAOl9mLgzrL1+p58kRDWRO7IOLTuk4GxsfHJWpwWSUtdvMu7je9+vRYzO60jg3K+HcpVeOCvdNCI4wwZ5uPNx/IYK2aPAL7+7j48Pj8lcd9BNLrC6pHvJN15NLc25KKMcfJVHrsB1/rBeseCLheKU+I5tNj5g94/FTVVjHqU0umO6DaMZni7+SkCN7sHEW6cVVGcNFha9sByV0XaOtjgZYDuaPmTw71bKzS80mBdut91uA8TmfFW6eU954pEyygmBeFRIgR4ZKcYw8WyIxB5HgVKsoo3WN0FVSSEtxwIuCORGa3ZsNaf0CY8HVTyOoEUA+YPktIOduuceDgD45H4ALoXZPQmLRFPfOQOm8JnOez+AsWa0y9ERQEREHKms8pFXUNPs1EzfKRwVpa64WQ7VqMw6YqgcA9zZW90jQ5x/f3/JY/HHuesLvOLY72sLX35T7DLWNsHHoCCdImCs7FoLLGRwNnfsgDbDk8448BlmVRxxe07EnzJUwuuSSd44elbdGAsA1gwa0AAAfJTIhjdIlR7pwJ8B+at87N155HJXeY3CopLOFvJKR5Q2sTzPy/zU+R9gqenBaLdSvZnIoxT95SI1GCqiYCowVJBUQKImlyoJ/WvfFT5ZLKVGy5uUVFDHxKnKFzwFLMhOSgmlwCNddSCFPyCKiXi8jfcKJVFdofRrquqgpW4GZ4YSMwzF0jh1DGuPgurIYmsaGtFmtAAAyAAsB5LUewnVzCTSEg9e8UF/cB+leO9zQ0fYdzW31mtCIigIi1XtX1slc//RtG4h7t0VEjfWaJPUhZ9dwPgD3oMP2vacpanSDTTWdJBH2cs5sYmEOJbuj9Y9pLrcLnIkXGv3Si1m3sTdxOLpHe888+nBbHZR6HpdGywvlZPPMy29C4SNgODm7jhg5wIaS72srgLXEsTQfRJtwva/jZakTQKNpUph+GaiuriKlj1SVbbYhTGuXsmIslIp45rrx78VIALXd69fmoqqYVGpUZUd1UR3QFS7r1rsUE5zAc1KkvkFOXqCQyHmprWgKJQyGwUEpuLlHMcF5A3ik3BBFCMFdtW9CSVlVHTR4F59J3uRjF7/AZXzJA4q1FwaMTkugNkmqBo6czzNtUTgEg5xxZsYeTj6zuth7KDN9H0UcMTIo27rI2tYwDg1osB8FUIiy0IiIC1ZrXs0qJp5JaeSO8skjz2j5GH6UbrhvRi/q3bxu244lbTRBz7Q7ItJvc4PEELQbAmQvDurQ25t32PRSNd9mNTQ036Q2QTsbczbrS0xi4AIbiXNxxOFreXRKhkjDgWuAIIIIIuCDgQRxCupjjdhspjuYy+X8v679gbRdR3aOldLGwvoZXC4GJp3kmzb8Bj6Ljgb7pxsTgr4w02Dg4WwI4g825g9D8cCdSpUtqiuvHR2xGXy/koN5KIJmXUlVBKluCijCo7qUogUEaXXl15dBVsNwo7Kliksqlrr5IiKylTNJGCmr1BKYLBSnG5VXDSPle2ONjnvcbNY0FznHoB/QW5dQNlDIS2ort18osWwg70bDmC8/rHDl6oPvYEBatk2zolzK6rbZos6nicPWOYleDwGbR97lfdC9RZaEREBERAREQEREEuoga9jmPaHNcCHNcAWuBwIIOBC0nr3slkiLp9HgvjzdT3u9nPsifXb9U+lyvkN4ImjjuUuGRa0tJDmvDgbjMEWwIxuDZRFgcL5H+uC6e1q1Goa/GaK0lrCWM7kotld2TgOTgR0WrtObF6xhJpZ45m+7JeKTuuLtcevorUrONWOBCgusqqNn+mGmxoZfumJ482PKrdD7KtKzuAfA2BvF0r25cbMYXOJ6EAdQisJihc9wa1pc5xAa1oLnOJyAaMSTyCyDWPUWvoYGTzxWjeBctO92ROTZbD0TliLjG174LdOoOzCChcJ5nCepHqm1o4v8AhtObvrnHkBis/kjDgQQCCCCCLgg5gjiFNVxoCvV0BrPsaopyX0zjSvOO60b8J/5ZILfukDosFrNjWk2H0DBK3gWyFrj3te0AfvFNRrsBTYmHgs5ptlOlSbGBrerpYrfwuJWR6J2N1F/p54mDkwOkPx3QPiqNYQQuKzHVTZ5VVlnWMcR/WPGBH1G4F/wHVbc0Ds+oKazhH2rx7UtnWPRlt0d9r9VlQTUxYtVtUqWhZaFnpkenI6xkf3ngOgsPFX5EWWhERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB/9k=">
 
-      <div class="product-tile-info">
-        <span>Rapoo MT760</span>
-      </div>
+      <span>Auriculares Inalámbricos</span>
+
+    </a>
+
+    <!-- 4 -->
+    <a href="https://amzn.to/4uNBjc1"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/81fYeA0JsnL._AC_SX466_.jpg">
+
+      <span>Alfombrilla de mouse</span>
+
+    </a>
+
+    <!-- 5 -->
+    <a href="https://amzn.to/4faTpju"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/61bCeQBjUwL._AC_SX679_.jpg">
+
+      <span>Ultra HD 4K</span>
+
+    </a>
+
+    <!-- 6 -->
+
+    
+    <!-- 8 -->
+    <a href="https://amzn.to/4u0sPhy"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/41f6SnKT8ML._AC_SY741_.jpg">
+
+      <span>Altavoces de PC</span>
+
+    </a>
+
+    <!-- 9 -->
+    <a href="https://amzn.to/4noET9L"
+       target="_blank"
+       class="grid-card">
+
+      <img src="https://m.media-amazon.com/images/I/71ukabvTWjL._AC_SX679_.jpg">
+
+      <span>Cyber RGB Edition</span>
 
     </a>
 
   </div>
-</details>
-<button class="carousel-btn right">›</button>
 
 </div>
 
@@ -747,11 +985,6 @@ PROGRAMAS DE DISEÑO ADOBE
 
 
 
-  <!-- LEGAL -->
-  <p class="legal">
-    Sitio de afiliados. Al comprar a través de estos enlaces, recibimos una comisión sin costo extra para ti.<br>
-    🔒 Enlaces seguros · 🛒 Compra directa en la plataforma oficial
-  </p>
 
 </section>
 <script src="https://unpkg.com/lucide@latest"></script>
